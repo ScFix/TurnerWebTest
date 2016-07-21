@@ -21,6 +21,10 @@ namespace TurnerWebTest
 					  "~/Scripts/angular.js",
 					  "~/Scripts/respond.js"));
 
+			bundles.Add(new ScriptBundle("~/bundles/app").Include(
+					  "~/Scripts/App/mainApp.js",
+					  "~/Scripts/App/eventModule.js"));
+
 			bundles.Add(new StyleBundle("~/Content/css").Include(
 					  "~/Content/bootstrap.css",
 					  "~/Content/site.css"));
