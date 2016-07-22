@@ -1,0 +1,73 @@
+﻿@model TurnerWebTest.Models.DescriptiveTitle
+
+<div class="bs-doc-header">
+	<div class="container body-content">
+		<h1>@(Model.OtherNames[0] + " (" + Model.Language + ")" )</h1>
+		<p class="lead">
+
+			@for (int i = 0; i < Model.Genres.Count; i++)
+			{
+				String concatedString = "";
+				if (concatedString == "")
+				{
+					concatedString += Model.Genres[i];
+				}
+				else
+				{
+					concatedString += "," + Model.Genres[i];
+				}
+				i++;
+				if (i == Model.Genres.Count)
+				{
+				<p>@concatedString</p>
+				}
+			}
+			</p>
+
+		</div>
+	</div>
+	<div class="container body-content">
+		<h1>Different Synopsis</h1>
+		<hr />
+		@foreach (var description in Model.VariaousDescriptions)
+		{
+			<h4>@description.Type</h4>
+			<div class="bs-callout bs-callout-info">
+				<p>@description.Description</p>
+			</div>
+		}
+		<h1>People Involved</h1>
+		<table class="table table-hover table-striped">
+			<tr>
+				<th>Name</th>
+				<th>Role</th>
+				<th>Type</th>
+			</tr>
+			@foreach (var people in Model.Participants)
+			{
+				<tr>
+					<td>@people.Name</td>
+					<td>@people.Role</td>
+					<td>@people.Type</td>
+				</tr>
+			}
+		</table>
+		<h1>Awards</h1>
+		<table class="table table-hover table-striped">
+			<tr>
+				<th>Year</th>
+				<th>Name</th>
+				<th>Won</th>
+				<th>Company</th>
+			</tr>
+			@foreach (var aw in Model.Awards.OrderBy(a => a.Year))
+			{
+				<tr>
+					<td>@aw.Year</td>
+					<td>@aw.Name</td>
+					<td>@aw.Won</td>
+					<td>@aw.Company</td>
+				</tr>
+			}
+		</table>
+	</div>

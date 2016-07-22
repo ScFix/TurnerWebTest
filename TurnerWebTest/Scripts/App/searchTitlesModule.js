@@ -25,14 +25,16 @@
 		};
 
 		this.loadMore = function () {
-			if (loadLimt > item.length) {
+			if (this.loadLimit > this.items.length) {
 				var scope = this;
 				var success = function (data) {
 					console.log(data);
-					scope.items.push(data.Items);
-
+					angular.forEach(data.Items, function (item) {
+						scope.items.push(item);
+					});
+					//$scope.$apply();
 				};
-				Titles.get(scope.searchString, items.length, success);
+				Titles.get(scope.searchString, scope.items.length, success);
 			}
 		}
 	}]);

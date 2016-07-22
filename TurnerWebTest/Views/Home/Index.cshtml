@@ -15,9 +15,15 @@
 			</div>
 		</form>
 	</div>
+
 	<div class="row">
 		<div ng-repeat="item in search.items">
 			<h3>{{item.Title}}</h3>
 		</div>
+	</div>
+	<div class="row" ng-show="search.loadLimit > search.items.length">
+		<form class="form-group">
+			<button class="btn btn-primary btn-lg col-xs-offset-4 col-xs-2 btn-success" type="button" ng-click="search.loadMore()">More!</button>
+		</form>
 	</div>
 </div>
