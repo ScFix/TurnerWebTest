@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="d0761f86026c481784d2cdb07276de31" Name="Diagram1" ZoomLevel="86">
-        <EntityTypeShape EntityType="TitlesModel.Award" Width="1.5" PointX="3.5" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TitlesModel.Award" Width="1.5" PointX="3.625" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="TitlesModel.Genre" Width="1.5" PointX="3.75" PointY="14" IsExpanded="true" />
         <EntityTypeShape EntityType="TitlesModel.OtherName" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TitlesModel.Participant" Width="1.5" PointX="3.75" PointY="1.875" IsExpanded="true" />

@@ -5,7 +5,8 @@ using System.Web;
 
 namespace TurnerWebTest.Models
 {
-	public class jsonTitle
+	public class ReducedTitle
 	{
+		public string Title { get; set; }
 	}
 }
