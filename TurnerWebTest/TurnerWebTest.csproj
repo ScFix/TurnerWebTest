@@ -52,6 +52,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -173,7 +174,6 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
@@ -205,26 +205,69 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\TitlesController.cs" />
+    <Compile Include="Entities\Award.cs">
+      <DependentUpon>Titles.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Genre.cs">
+      <DependentUpon>Titles.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\OtherName.cs">
+      <DependentUpon>Titles.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Participant.cs">
+      <DependentUpon>Titles.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\StoryLine.cs">
+      <DependentUpon>Titles.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Title.cs">
+      <DependentUpon>Titles.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TitleGenre.cs">
+      <DependentUpon>Titles.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TitleParticipant.cs">
+      <DependentUpon>Titles.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Titles.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Titles.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Titles.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Titles.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Titles.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Titles.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountBindingModels.cs" />
-    <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\jsonTitle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Providers\ApplicationOAuthProvider.cs" />
-    <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Entities\Titles.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Titles.edmx</DependentUpon>
+      <LastGenOutput>Titles.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entities\Titles.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Titles.edmx</DependentUpon>
+      <LastGenOutput>Titles.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
@@ -252,6 +295,13 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
     <Content Include="Scripts\angular.min.js.map" />
+    <EntityDeploy Include="Entities\Titles.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Titles.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Entities\Titles.edmx.diagram">
+      <DependentUpon>Titles.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -281,14 +331,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="fonts\" />
+    <Folder Include="Providers\" />
+    <Folder Include="Results\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
