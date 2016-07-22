@@ -26,6 +26,11 @@ namespace TurnerWebTest.Controllers
 					title = new DescriptiveTitle(result);
 
 			}
+			//Should have a better way of doing this.
+			if (title == null)
+			{
+				throw new HttpException(404, "Item Not Found");
+			}
 			return View(title);
 		}
 	}

@@ -23,6 +23,7 @@ namespace TurnerWebTest.Models
 			this.VariaousDescriptions = new List<Storyline>();
 			this.Participants = new List<person>();
 			this.Awards = new List<Trophies>();
+
 			this.Language = result.OtherNames.Where(n => { return n.TitleNameType == "Primary"; }).First().TitleNameLanguage;
 			foreach (var names in result.OtherNames)
 			{

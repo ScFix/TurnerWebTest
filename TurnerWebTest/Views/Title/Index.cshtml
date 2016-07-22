@@ -1,5 +1,5 @@
 ﻿@model TurnerWebTest.Models.DescriptiveTitle
-
+@if(Model != null) { 
 <div class="bs-doc-header">
 	<div class="container body-content">
 		<h1>@(Model.OtherNames[0] + " (" + Model.Language + ")" )</h1>
@@ -70,4 +70,6 @@
 				</tr>
 			}
 		</table>
-	</div>
+	
+	}
+</div>
