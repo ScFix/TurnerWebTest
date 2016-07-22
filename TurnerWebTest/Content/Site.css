@@ -1,1 +1,17 @@
-﻿
+﻿.bs-doc-header {
+	background-color: rgb(9,62,153);
+	background-image: linear-gradient(to bottom,#144599 0,#114fba 100%);
+	background-repeat: repeat-x;
+	color: rgb(101,157,252);
+	display: block;
+	margin-bottom: 30px;
+	padding-bottom: 30px;
+	padding-left: 0px;
+	padding-top: 60px;
+	position: relative;
+	text-align: left;
+}
+	.bs-doc-header h1{
+		color: rgb(171,195,237);
+
+	}
