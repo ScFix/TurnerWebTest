@@ -10,6 +10,6 @@ namespace TurnerWebTest.Models
 	{
 		public IList<ReducedTitle> Items { get; set; }
 		public int TotalCount { get; set; }
-
+		public int Id { get; set; }
 	}
 }

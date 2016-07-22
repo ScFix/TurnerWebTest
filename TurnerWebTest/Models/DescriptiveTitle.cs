@@ -15,7 +15,7 @@ namespace TurnerWebTest.Models
 		public List<Trophies> Awards { get; set; }
 		public List<String> OtherNames { get; set; }
 		public List<person> Participants { get; set; }
-
+		public string Name { get; set; }
 		public DescriptiveTitle(Title result)
 		{
 			this.OtherNames = new List<string>();
@@ -23,8 +23,10 @@ namespace TurnerWebTest.Models
 			this.VariaousDescriptions = new List<Storyline>();
 			this.Participants = new List<person>();
 			this.Awards = new List<Trophies>();
-
-			this.Language = result.OtherNames.Where(n => { return n.TitleNameType == "Primary"; }).First().TitleNameLanguage;
+			
+			var main = result.OtherNames.Where(n => { return n.TitleNameType == "Primary"; }).First();
+			this.Language = main.TitleNameLanguage;
+			this.Name = main.TitleName;
 			foreach (var names in result.OtherNames)
 			{
 				this.OtherNames.Add(names.TitleName);

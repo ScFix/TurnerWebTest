@@ -18,7 +18,7 @@
 
 	<div class="row">
 		<div ng-repeat="item in search.items">
-			<h3>{{item.Title}}</h3>
+			<a ng-href="\title\{{item.Id}}"><h3>{{item.Title}}</h3></a>
 		</div>
 	</div>
 	<div class="row" ng-show="search.loadLimit > search.items.length">

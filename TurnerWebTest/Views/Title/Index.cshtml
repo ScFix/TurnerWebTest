@@ -1,10 +1,9 @@
 ﻿@model TurnerWebTest.Models.DescriptiveTitle
-@if(Model != null) { 
-<div class="bs-doc-header">
-	<div class="container body-content">
-		<h1>@(Model.OtherNames[0] + " (" + Model.Language + ")" )</h1>
-		<p class="lead">
-
+@if (Model != null)
+{
+	<div class="bs-doc-header">
+		<div class="container body-content">
+			<h1>@(Model.Name + " (" + Model.Language + ")" )</h1>
 			@for (int i = 0; i < Model.Genres.Count; i++)
 			{
 				String concatedString = "";
@@ -19,10 +18,9 @@
 				i++;
 				if (i == Model.Genres.Count)
 				{
-				<p>@concatedString</p>
+					<p class="lead">@concatedString</p>
 				}
 			}
-			</p>
 
 		</div>
 	</div>
@@ -70,6 +68,7 @@
 				</tr>
 			}
 		</table>
-	
-	}
-</div>
+
+	</div>
+
+}

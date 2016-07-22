@@ -13,7 +13,9 @@ namespace TurnerWebTest.Controllers
 		// GET: Title
 		public ActionResult Index(int id)
 		{
-
+			// NOTE this was much debate to me, wether or not I should just leave this to be displayed via angulare or whether it should be displayed in a more traditional fashion.
+			// I am honestly not sure, much of what I know about the Angular engine is that it has huge advantages when pulling down different bits of data dynamically making small calls. however this is not really waht I did her mostly because of the open ended nature of the design. 
+			// Personally going down the route of the Angular would had to have to implent a state engine using the UI routes module, this would of taken me much more time and I finally came to the conclusion that showing a more diverse knowledge base should not hurt me, and I rather complete a something than not. 
 			DescriptiveTitle title = null;
 
 			Title result = null;
